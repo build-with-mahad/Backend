@@ -1,19 +1,24 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "full stack web app ",
+  "description": "for learning purpose Backend",
   "keywords": [
-    "javascript",
+    "Javascript",
     "backend"
   ],
+  "homepage": "https://github.com/build-with-mahad/Backend#readme",
+  "bugs": {
+    "url": "https://github.com/build-with-mahad/Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/build-with-mahad/Backend.git"
+  },
   "license": "ISC",
   "author": "Mahad Khan",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dex": "nodemon src/index.js"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.14"
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
