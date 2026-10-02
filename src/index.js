@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import { DB_NAME } from "./constants.js";
 import express from "express";
 import connectDB from "./db/index.js";
@@ -37,3 +37,18 @@ connectDB()
     console.log(`MONGO-DB Connection Failed ${error}`)
     throw error
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
