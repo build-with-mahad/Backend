@@ -23,17 +23,22 @@ const UserSchema = new mongoose.Schema({
 ]
     },
     avatar:{
-        type:String
+        type:String,
+        require: true
     },
     CoverImage:{
-        type:String
+        type:String,
+        require:true
     },
     refreshToken:{
         type:String,
         require:true
     },
     watchHistory:[
-        
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Video"
+        }
     ]
 
 },
