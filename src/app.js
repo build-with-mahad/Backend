@@ -15,3 +15,9 @@ app.use(express.json({limit:"20kb"}))
 app.use(express.urlencoded({extended:true,limit:"20kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
+
+//Routes imports
+import userRoute from "./routes/user.router.js"
+app.use("/api/v2/users",userRoute)
+
+export {app}
