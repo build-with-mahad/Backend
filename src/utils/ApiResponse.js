@@ -11,3 +11,4 @@ class ApiResponse extends Error{
         this.message = message
     }
 }
+export {ApiResponse}
