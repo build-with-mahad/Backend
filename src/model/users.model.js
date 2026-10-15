@@ -4,38 +4,37 @@ import bcrypt from "bcrypt"
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
-        lowerCase: true
+        lowercase: true
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
     },
     fullName: {
         type: String,
-        require: true,
+        required: true,
     },
     password: {
         type: String,
-        require:
+        required:
             [true,
                 "The password must contain at least 3 different character types (e.g., uppercase letters, lowercase letters, or symbols like $)."
             ]
     },
     avatar: {
         type: String,
-        require: true
+        required: true
     },
     CoverImage: {
         type: String,
-        require: true
+        required: true
     },
     refreshToken: {
         type: String,
-        require: true
-    },
+        },
     watchHistory: [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -49,9 +48,8 @@ const UserSchema = new mongoose.Schema({
     }
 )
 UserSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) return next();
+    if (!this.isModified("password"))return;
     this.password = await bcrypt.hash(this.password, 10)
-    next()
 })
 UserSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password)
